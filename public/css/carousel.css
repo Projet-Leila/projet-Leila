@@ -1,0 +1,159 @@
+.carousel {
+  height: 665px;
+  background-color: rgb(53, 182, 174);
+}
+#slideshow {
+  position: relative;
+  top: 362px;
+  text-align: center;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+#slideshow > div {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 10px;
+  width: 50%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+  z-index: 1;
+  border-radius: 2%;
+}
+.assos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 165px 285px;
+  position: relative;
+  left: 93px;
+  top: 64px;
+}
+.assos a {
+  text-decoration: none;
+}
+.carre {
+  height: 200px;
+  background-image: url("../images/carousel4.jpg");
+  width: 240px;
+  border-radius: 12%;
+}
+.carre div {
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  height: 199px;
+  line-height: 435px;
+  
+}
+.sup1 {
+  border: 4px solid red;
+  color: red;
+}
+.sup2 {
+  border: 4px solid green;
+  color: green;
+}
+.sup3 {
+  border: 4px solid yellow;
+  color: yellow;
+}
+.sup4 {
+  border: 4px solid blueviolet;
+  color: blueviolet;
+}
+.Nom-asso2 {
+  display: none;
+}
+@media (max-width: 1100px) {
+  .carousel {
+    height: 1120px;
+    background-color: rgb(53, 182, 174);
+  }
+  .assos {
+    display: flex;
+    margin: 0px 10px 0px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    align-items: flex-start;
+    left: 0px;
+    top: 586px;
+    grid-template-columns: none;
+    grid-gap: 88px 132px;
+  }
+  #slideshow > div {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 10px;
+    width: 100%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    z-index: 1;
+  }
+  .Nom-asso2 {
+    display: block;
+    width: fit-content;
+    margin: auto;
+    border: 3px solid rgb(53, 182, 174);
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+  .Nom-asso2 h1 {
+    margin: 7px 10px;
+  }
+}
+@media (max-width: 670px) {
+  .carousel {
+    height: 1710px;
+    background-color: rgb(53, 182, 174);
+  }
+  .assos {
+    display: flex;
+    margin: 0px 10px 0px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    align-items: flex-start;
+    left: 0px;
+    top: 607px;
+    grid-template-columns: none;
+    grid-gap: 88px 132px;
+  }
+  #slideshow > div {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 10px;
+    width: 100%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    z-index: 1;
+  }
+  .Nom-asso2 {
+    display: block;
+    width: fit-content;
+    margin: auto;
+    border: 3px solid rgb(53, 182, 174);
+    margin-bottom: 30px;
+    margin-top: 20px;
+    position: relative;
+    bottom: 576px;
+  }
+  .Nom-asso2 h1 {
+    margin: 7px 10px;
+  }
+}

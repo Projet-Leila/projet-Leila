@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}presentation
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/presentation.css') }}"/>
+
+{% endblock %}
+
+{% block body %}
+	<body class="home">
+		<div class="container">
+			<ol class="breadcrumb">
+				<li>
+					<a href="{{ path('accueil') }}">
+						Accueil
+					</a>
+				</li>
+				<li class="active">
+					Contact
+				</li>
+			</ol>
+			<div class="Nom-asso1">
+				<h1 class="Nom-asso2">
+					Contact
+				</h1>
+			</div>
+			<div class="contact_Block">
+				<div class="block_c">
+					<h3>
+						Résidence Les Trois Rivières et S.A.J Les Trois Rivières</h3>
+					<p>Tel :
+						<a href="tel:+33149462440">01 49 46 24 40</a>
+					</p>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2620.110058175685!2d2.391992051430707!3d48.95139017919505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDU3JzA1LjAiTiAywrAyMyczOS4xIkU!5e0!3m2!1sfr!2sfr!4v1623686129884!5m2!1sfr!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+
+				</div>
+				<div class="block_c">
+					<img src="{{ asset('images/logo.png') }}" alt="">
+				</div>
+				<div class="block_c">
+
+
+					<h3>
+						S.A.V.S Les Trois Rivières</h3>
+					<p>Tel :<a href="tel:+33185586814">01 85 58 68 14</a>
+					</p>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2620.144312077314!2d2.3919344693903803!3d48.95073791668608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66beb789f57d3%3A0xa848f7c9a942e8d1!2s18%20Rue%20de%20la%20Vieille%20Mer%2C%2093240%20Stains!5e0!3m2!1sfr!2sfr!4v1623701577005!5m2!1sfr!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+				</div>
+				<div class="block_c">
+
+
+					<h3>
+						E.M.P Henri Wallon
+					</h3>
+					<p>Tel :<a href="tel:+33148266932">01 48 26 69 32</a>
+					</p>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2620.0273698952337!2d2.386272980118327!3d48.952964702098186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66be8faac83f1%3A0xe1ce1590b58fa3ec!2s8%20Avenue%20Louis%20Bordes%2C%2093240%20Stains!5e0!3m2!1sfr!2sfr!4v1623701961361!5m2!1sfr!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				</p>
+			</div>
+		</div>
+	</body>
+</div>
+<!-- /Article -->
+<div id='scroll_to_top' class='opacity'>
+	<img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut">
+</div>
+{% block javascripts %}
+	<script src="{{ asset('js/menu.js') }}"></script>
+{% endblock %}</body>{% endblock %}

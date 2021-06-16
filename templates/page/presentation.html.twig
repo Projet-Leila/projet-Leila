@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}presentation{% endblock %}
+    {% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ asset('css/presentation.css') }}"/>
+
+    {% endblock %}
+
+{% block body %}
+<body class="home">
+    <div class="container">
+
+        <ol class="breadcrumb">
+            <li><a href="{{ path('accueil') }}">Accueil</a></li>
+            <li class="active">Présentation</li>
+        </ol>
+        <div class="Nom-asso1">
+            <h1 class="Nom-asso2">Association Leila
+            </h1>
+        </div>
+
+        <div class="row">
+
+            <!-- Article main content -->
+            <article class="col-sm-8 maincontent">
+                <header class="page-header">
+                    <h1 class="page-title"></h1>
+                </header>
+                <h3>L'association Leila</h3><br>
+                <!--<img src="assets/images/mac.jpg" alt="" class="img-rounded pull-right" width="300"> -->
+                <p>L’Association gestionnaire L.E.I.L.A. (Les Enfants Inadaptés et Leurs Amis), créée en 1963, est ouverte à toute personne (résident, famille, amis) qui désire y adhérer.
+                    <br><br>L’Externat Médico Pédagogique Henri Wallon, à Stains (93) est le premier établissement ouvert à la création de l’Association. 
+                    <br><br>Au début des années 2000, l’Association a souhaité apporter une réponse au manque d’équipements en matière d’hébergement pour travailleurs handicapés sur la partie ouest du département de la Seine Saint Denis, en s’appuyant sur l’analyse du dernier schéma départemental. 
+                    <br><br>Depuis le 26 mars 2002, les services de la préfecture de la Seine Saint Denis ont donné l’autorisation d’ouverture du Foyer d’Hébergement Les Trois Rivières qui a vu le jour en 2005.
+                    <br><br>Depuis, un SAVS (Service d’Accompagnement à la Vie Sociale) a ouvert en janvier 2016, puis un SAJ (Service d’Accueil de Jour) en avril 2018. 
+                    <br> <br>Cette Association dont le siège social est situé à la Résidence Les Trois Rivières, Mail des Trois Rivières, Moulin Neuf, 93240 STAINS, est régie par la loi du 1er juillet 1901 et le Décret du 16 août 1901.
+                </p><br>
+                 <h3>Le Conseil d’Administration de l’Association est composé de représentants :</h3><br>
+                <p> -	  du Conseil Municipal de Stains, 
+                    <br>-	 des familles
+                    <br>-	 et diverses personnalités.
+
+                </p><br>
+                <h3>Notre mission</h3><br>
+                <p>De venir en aide aux familles de personnes en situation de handicap.
+                    <br><br>De proposer des méthodes éducatives, pédagogiques et thérapeutiques appropriées, pour l’accompagnement et la prise en charge des personnes atteintes de déficience intellectuelle et I ou psychique.
+                    <br><br>De favoriser l’inclusion scolaire et / ou professionnelle   des personnes accompagnées,
+                    <br><br>D’assurer leur inclusion sociale dans tous les secteurs de la vie ou ils seront appelés à exercer une activité professionnelle   et extra professionnelle,
+                    <br><br>D'étudier et perfectionner tout ce qui peut avoir trait à cet accompagnement ou prise en charge et à cette inclusion,
+                    <br><br>De permettre l'hébergement d'adultes en situation de handicap,
+                    <br><br>D'accueillir en externat des enfants et des adolescents en situation de handicap,
+                    <br><br>De gérer les Etablissements ou Services agrées par les autorités de tarification.  
+                    <br><br>    
+                </p>
+            </div>
+    </div>
+            <div class="Block">
+                <div class="container">
+
+                <h3>Nos partenaires</h3><br>
+                <div class="partenaires">
+            <div class="Cada pp">
+                <a href="https://www.cada.fr/" target="blanck"><img src="{{ asset('images/AIDE_SOCIALE_A_L’ENFANCE.png') }}"></a></div>
+            <div class="ars pp">
+	            <a href="https://www.ars.sante.fr/" target="blanck"><img src="{{ asset('images/ARS.png') }}"></a></div>
+
+             <div class="cramif pp">
+	            <a href="https://www.cramif.fr/" target="blanck"><img src="{{ asset('images/C.R.A.M.I.F.svg') }}"></a></div>
+
+            <div class="menj pp">
+	            <a href="https://www.education.gouv.fr/" target="blanck"><img src="{{ asset('images/EDUCATION_N.png') }}"></a></div>
+
+            <div class="mdph pp">
+	            <a href="http://www.mdph.fr/" target="blanck"><img src="{{ asset('images/M.D.P.H.png') }}"></a></div>
+
+            <div class="caf pp">
+	            <a href="https://www.caf.fr/" target="blanck"><img src="{{ asset('images/CAF.png') }}"></a></div>
+
+            <div class="f12 pp">
+	            <a href="" target="blanck"><img src="{{ asset('images/M.D.P.H.png') }}"></a></div>
+
+            <div class="f12 pp">
+	            <a href="" target="blanck"><img src="{{ asset('images/M.D.P.H.png') }}"></a></div>
+
+            <div class="f12 pp">
+	            <a href="" target="blanck"><img src="{{ asset('images/M.D.P.H.png') }}"></a></div>
+
+            <div class="f12 pp">
+	            <a href="" target="blanck"><img src="{{ asset('images/M.D.P.H.png') }}"></a></div>
+
+            <div class="f12 pp">
+	            <a href="" target="blanck"><img src="{{ asset('images/M.D.P.H.png') }}"></a></div>
+
+            <div class="f12 pp">
+	            <a href="" target="blanck"><img src="{{ asset('images/M.D.P.H.png') }}"></a></div>
+
+            <div class="am pp">
+	            <a href="https://www.ameli.fr/" target="blanck"><img src="{{ asset('images/C.P.A.M.png') }}"></a></div>
+
+                </div>
+            </div>
+        </div>
+            </article>
+            <!-- /Article -->
+    <div id='scroll_to_top' class='opacity'>
+        <img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut">
+    </div>
+    {% block javascripts %}
+            <script src="{{ asset('js/menu.js') }}"></script>
+        {% endblock %}
+    </body>
+{% endblock %}

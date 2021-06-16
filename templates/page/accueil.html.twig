@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acceuil{% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/carousel.css') }}" />
+    {% endblock %}
+
+{% block body %}
+<body class="home">
+    
+    <!-- carousel -->
+    <div class="carousel">
+        <div class="container">
+            <div id="slideshow">
+                <div style="background-image: url('{{ asset('images/SAJ-accueil.jpg') }}');">
+                    
+                </div>
+
+                <div style="background-image: url('../images/carousel6.jpg');">
+                </div>
+                <div style="background-image: url('../images/carousel3.jpg');">
+                </div>
+                <div style="background-image: url('../images/carousel5.jpg');">
+                </div>
+                <div style="background-image: url('../images/carousel2.jpg');">
+                </div>
+                <div style="background-image: url('../images/carousel4.jpg');">
+                </div>
+            </div>
+            <div class="assos">
+                <a href="{{ path('SAJ') }}">
+                    <div class="carre sup1">
+                        <div>SAJ</div>
+                    </div>
+                </a>
+                <a href="{{ path('EMP') }}">
+                    <div class="carre sup2">
+                    
+                        <div>EMP</div>
+                    </div>
+                </a>
+                <a href="{{ path('SAVS') }}">
+                    <div class="carre sup3">
+                    
+                        <div>SAVS</div>
+                    </div>
+                </a>
+                <a href="{{ path('RESIDENCE') }}">
+                    <div class="carre sup4">
+                    
+                        <div>RESIDENCE</div>
+                    </div>
+                </a>
+            </div>
+            <div class="Nom-asso2">
+            <h1 class="Nom-asso3">Nos établissements
+            </h1>
+            </div>
+        </div>
+    </div>
+    <!-- carusel -->
+    
+    <div id='scroll_to_top' class='opacity'>
+        <img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut">
+    </div>
+    <script src="{{ asset('js/menu.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jQuery_lib.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jQuery.js') }}"></script>
+</body>
+{% endblock %}

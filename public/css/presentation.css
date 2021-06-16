@@ -1,0 +1,36 @@
+.Block{
+    background-color: white;
+}
+.partenaires{
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 50px 60px;
+    justify-content: space-between;
+}
+.Cada{
+    width: 400px;
+}
+.cramif img{
+    height: 110px;
+}
+.am{
+    width: 370px;
+    padding-bottom: 50px;
+}
+.mdph img{
+    height:200px ;
+}
+.caf img{
+    height: 200px;
+}
+.f12 img{
+    height: 200px;
+}
+@media (max-width:1200px){
+    .partenaires{
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 50px 60px;
+    justify-content: space-around;
+}
+}

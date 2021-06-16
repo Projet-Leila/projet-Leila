@@ -1,0 +1,227 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SAJ{% endblock %}
+    {% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/SAJ.css') }}" />
+    {% endblock %}
+
+{% block body %}
+<body class="home">
+    <div class="container">
+
+        <ol class="breadcrumb">
+            <li><a href="index">Accueil</a></li>
+            <li class="active">S.A.J</li>
+        </ol>
+        <div class="Nom-asso1">
+            <h1 class="Nom-asso2">Service d’Accueil de Jour
+                Les Trois Rivières
+            </h1>
+        </div>
+        <div class="repere">
+            <table class="lienDirect">
+                <tr>
+                    <td class="balise"><a href="#Presentation"><img src="{{ asset('images/logo.png') }}" alt="Localisation" width="50px" height="40px"> Présentation</a></td>
+                    <td class="balise"><a href="#Localisation"><img src="{{ asset('images/SAJ-localisation.webp') }}" alt="Localisation" width="50px"> Accès</a></td>
+                </tr>
+                <tr>
+                    <td class="balise"><a href="#accompagnée"><img src="{{ asset('images/SAJ-Admission.webp') }}" alt="equipe" width="50px"> Admission</a></td>
+                    <td class="balise"><a href="#equipe"><img src="{{ asset('images/SAJ-equipe.jpg') }}" alt="equipe" width="50px"> Notre équipe</a></td>
+
+                </tr>
+                <tr>
+                    <td class="balise"><a href="#quotidien"><img src="{{ asset('images/SAJ-quotidien.webp') }}" alt="quotidien" height="50px" width="50px"> Notre quotidien</a></td>
+                    <td class="balise"><a href="#financement"><img src="{{ asset('images/SAJ-euros.webp') }}" alt="financement" height="50px" width="50px"> Financement</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="row">
+
+            <!-- Article main content -->
+            <article class="col-sm-8 maincontent" id="Presentation">
+                <header class="page-header">
+                    <h1 class="page-title">A propos de nous</h1>
+                </header>
+                <h3>L'établisement S.A.J</h3>
+                <img src="assets/images/SAJ-accueil.jpg" alt="" class="img-rounded pull-right" width="300">
+                <p>Le SAJ Les Trois Rivières accueille des adultes présentant un handicap mental et/ou psychique ou porteurs de troubles de la sphère autistique, avec ou sans troubles du comportement ; auxquels peuvent s'ajouter des atteintes motrices et sensorielles ne limitant pas les possibilités de déplacement et d'insertion.
+                    <br><br>Le SAJ accompagne 15 personnes en situation de handicap mental ou psychique, âgées de 20 ans et plus qui ne sont pas, ou plus en mesure d’exercer une activité professionnelle.
+
+                    <br><br>Des accueils temporaires sont possibles en lien avec la famille ou la structure d’origine.
+                    <br><br>Il est destiné à des personnes dont l’automie et l’état de santé permettent un accompagnement socio-éducatif, sans prise en charge médicale.
+                    <br><br>Le SAJ accompagne la personne dans l’élaboration et la réalisation de son projet de vie, lorsqu’elle s’inscrit dans une dynamique quotidienne de développement ou de maintien de ses compétences.
+
+                </p>
+                <h3>Sécurité</h3>
+                <p>La sécurité est assurée par le directeur en lien avec l’agent technique et les différents prestataires qui veillent au bon fonctionnement des divers équipements et installations. Le directeur est également garant de la bonne tenue du registre de sécurité dans lequel sont consignées les informations relatives aux interventions des organismes habilités (alarmes, ascenseur, extincteurs, groupe électrogène, …).
+                    <br><br>Un cahier technique est mis à disposition du personnel pour noter les soucis et les dysfonctionnements constatés dans le bâtiment.
+                    <br><br>Chaque année un exercice inopiné d’incendie est organisé sous la surveillance d’un organisme habilité. Les salariés bénéficient d’une formation incendie obligatoire.
+                </p>
+                <div id="Localisation"></div>
+                <header class="page-header">
+                    <h1 class="page-title">Localisation</h1>
+                </header>
+
+                <!-- maps -->
+                <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+                    <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
+                    <script>
+                        (function() {
+                            var setting = {
+                                "height": 528,
+                                "width": 913,
+                                "zoom": 17,
+                                "queryString": "Mail des Trois Rivières, 93240 Stains, France",
+                                "place_id": "Ei5NYWlsIGRlcyBUcm9pcyBSaXZpw6hyZXMsIDkzMjQwIFN0YWlucywgRnJhbmNlIi4qLAoUChIJY3z7hOtr5kcRuROO70zggBESFAoSCev8qYXCa-ZHETJqS-DD6kZL",
+                                "satellite": false,
+                                "centerCoord": [48.951282060554085, 2.3941375940743104],
+                                "cid": "0x1180e04cef8e13b9",
+                                "lang": "fr",
+                                "cityUrl": "/france/paris",
+                                "cityAnchorText": "Carte de Paris, Ile de France, France",
+                                "id": "map-9cd199b9cc5410cd3b1ad21cab2e54d3",
+                                "embed_id": "498535"
+                            };
+                            var d = document;
+                            var s = d.createElement('script');
+                            s.src = 'https://1map.com/js/script-for-user.js?embed_id=498535';
+                            s.async = true;
+                            s.onload = function(e) {
+                                window.OneMap.initMap(setting)
+                            };
+                            var to = d.getElementsByTagName('script')[0];
+                            to.parentNode.insertBefore(s, to);
+                        })();
+                    </script><a href="https://1map.com/fr/map-embed">1 Map</a>
+                </div>
+
+                <!-- /maps -->
+                <h3>Horaires d'ouverture :</h3>
+                <table class="Horaire">
+                    <tr>
+                        <td class="jour">Lundi</td>
+                        <td>09:00-16:00</td>
+                    </tr>
+                    <tr>
+                        <td class="jour">Mardi</td>
+                        <td>09:00-16:00</td>
+                    </tr>
+                    <tr>
+                        <td class="jour">Mercredi</td>
+                        <td>09:00-14:00</td>
+                    </tr>
+                    <tr>
+                        <td class="jour">Jeudi</td>
+                        <td>09:00-16:00</td>
+                    </tr>
+                    <tr>
+                        <td class="jour">Vendredi</td>
+                        <td>09:00-16:00</td>
+                    </tr>
+                    <tr>
+                        <td class="jour">Samedi</td>
+                        <td>Fermé</td>
+                    </tr>
+                    <tr>
+                        <td class="jour">dimanche</td>
+                        <td>Fermé</td>
+                    </tr>
+                </table>
+                <br>
+                <p><strong>Adresse : </strong> Mail les trois rivières, 93240 Stains
+                    <br>
+                    <strong>Téléphone :</strong> 01 49 46 24 40
+                    <br>
+                    <strong>Messagerie : </strong><a href="Mailto:saj@asso-leila.org">saj@asso-leila.org</a>
+                    <br>
+                    <strong>Notre site déjà existant : </strong><a href="http://sajlestroisrivieres.blogspot.com/">sajlestroisrivieres.blogspot.com</a>
+                </p>
+                <span class="small text-muted">*Et 5 samedis par an. </span>
+                <div id="accompagnée"></div>
+                <header class="page-header">
+                    <h1 class="page-title">Admission au SAJ</h1>
+                </header>
+                <h3>Nature du handicap </h3>
+                <p>L'admission au SAJ se fait sur orientation de la Commission des Droits et de l'Autonomie des Personnes Handicapées (CDAPH) de la Maison Départementale des Personnes Handicapées (MDPH), pour des personnes n’habitant pas à plus d’une heure du service.
+                    <br><br>Lors de stages de découverte et d’adaptation, l’équipe évalue, avec la personne et son entourage, l’adéquation entre les attentes et les capacités de la personne et la proposition du service.
+                </p>
+                <h3>Un projet d’accompagnement individualisé revu annuellement
+                </h3>
+                <p>Une évaluation des capacités et des besoins de la personne permet de déterminer avec elle et son entourage les objectifs de travail et le programme d’activités.
+                </p>
+                <div id="quotidien"></div>
+                <header class="page-header">
+                    <h1 class="page-title">Notre quotidien</h1>
+                </header>
+                <h3>Le quotidien en collectif</h3>
+                <img src="assets/images/SAJ-peinture.png" alt="" class="img-rounded pull-left" width="350" height="250">
+                <p>L’équipe du SAJ et les personnes accueillies mettent le quotidien au travail à travers :
+                    <br><br>- un projet annuel de créations artistiques présenté publiquement.
+                    <br>- une démarche éco-citoyenne.
+                    <br>- un lien étroit avec les ressources du territoire.
+                </p>
+                <br><br><br><br>
+                <h3>Des activités :</h3>
+                <p>- Manuelles (arts plastiques, jardinage…)
+                    <img src="assets/images/SAJ-jardin.png" alt="" class="img-rounded pull-right" width="370" height="250">
+                    <br><br>- D’expression avec des outils et médias créatifs adaptés
+                    <br><br>- Liées à la vie quotidienne (cuisine, esthétique, courses, transports …)
+                    <br><br>- Physiques (relaxation, marche…)
+                    <br><br>- Ludiques
+                    <br><br>- Temps libres (repos, activités au choix,…)
+                </p>
+                <h3>Avec des objectifs d’autonomie :
+                </h3>
+                <img src="assets/images/SAJ-Gateaux.png" alt="" class="img-rounded pull-left" width="370" height="250">
+                <p>- Vivre le quotidien et se l’approprier
+                    <br><br>- Créer et maintenir du lien social
+                    <br><br>- S’exprimer et s’impliquer en tant que citoyen
+                </p>
+                <br><br><br><br><br><br>
+                <h3>Repas et transport
+                </h3>
+                <p>En cas de nécessité, l’Etablissement peut organiser le transport pour les personnes accueillies.
+                    <br> Le repas du midi fait partie de l’accompagnement.
+
+                </p>
+                <h3>Une journée type</h3>
+                <img src="assets/images/SAJ-TypeJournée.png" alt="" class="img-rounded journee pull-left" width="450">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+                <div id="equipe">
+                </div>
+                <header class="page-header">
+                    <h1 class="page-title">Notre équipe</h1>
+                </header>
+                <h3>L'équipe</h3>
+                <p>L’équipe du SAJ est composée de :
+                    <br><br>- 2 éducatrices spécialisées,
+                    <br><br>- 1 conseillère en économie sociale familiale,
+                    <br><br>Le directeur et la responsable du service assurent l’encadrement.
+                    <br>La présence d’une psychologue, au sein du SAJ apparaît incontournable au vu du public accueilli.
+                </p>
+                <div id="financement">
+                </div>
+                <header class="page-header">
+                    <h1 class="page-title">Financement</h1>
+                </header>
+                <p>Le SAJ est financé par l’Aide Sociale du département de la Seine-Saint-Denis.
+                    <br><br>La personne accompagnée participe aux frais d’accueil et de transport.
+
+                </p>
+
+            </article>
+            <!-- /Article -->
+
+        </div>
+    </div> <!-- /container -->
+
+    <div id='scroll_to_top' class='opacity'>
+        <img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut">
+    </div>
+    {% block javascripts %}
+            <script src="{{ asset('js/menu.js') }}"></script>
+        {% endblock %}
+</body>
+{% endblock %}

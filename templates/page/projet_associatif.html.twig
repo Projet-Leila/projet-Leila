@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}presentation{% endblock %}
+    {% block stylesheets %}
+    {% endblock %}
+
+{% block body %}
+<body class="home">
+     <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="{{ path('accueil') }}">Accueil</a></li>
+            <li class="active">Nos Projet</li>
+        </ol>
+        <div class="Nom-asso1">
+            <h1 class="Nom-asso2">Association Leila
+            </h1>
+        </div>
+    </div>
+
+    <div id='scroll_to_top' class='opacity'>
+        <img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut">
+    </div>
+    {% block javascripts %}
+            <script src="{{ asset('js/menu.js') }}"></script>
+        {% endblock %}
+    </body>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier les utilisateurs
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>Modifier mes information</h1>
+		{{ form_start(form, {'attr': {'id': 'new_edit_utilisateur'}}) }}
+		{# utilisation de classes bootstrap pour la mise en forme #}
+		<div class="row">
+			<div class="col-12">
+				<label>Nom</label>
+				{{ form_widget(form.username) }}
+			</div>
+			<div class="col-12">
+				<label>Prénom</label>
+				{{ form_widget(form.lastname) }}
+			</div>
+			<div class="col-12">
+				{{ form_label(form.tel) }}
+				{{ form_widget(form.tel) }}
+			</div>
+			<select
+				name="role_change" id="role_change">
+				{#  {% for role in ["ROLE_USER", "ROLE_ADMIN", "ROLE_DON"] %}
+								                                <option value="{{role}}">{{role}}</option>
+								
+								                        {% endfor %} #}
+				<option value="ROLE_USER">Utilisateur</option>
+				<option value="ROLE_ADMIN" {% if "ROLE_ADMIN" in user.roles %} selected {% endif %}>Administrateur</option>
+
+				<option value="ROLE_DON" {% if "ROLE_DON" in user.roles %} selected {% endif %}>Donateur</option>
+
+			</select>
+
+			<divsel class="col-12">
+				{{ form_label(form.email) }}
+				{{ form_widget(form.email) }}
+			</divsel<divclass="col-12">
+			<label>Mot de passe</label>
+			{{ form_widget(form.password) }}
+		</div>
+		<div class="col-12">
+			<label for="verifpass">Saisir une seconde fois le mot de passe</label>
+		</br>
+		<input class="form-control" type="password" id="verifpass" required>
+	</div>
+
+</div>
+<button class="btn btn-success">{{ button_label|default('Modifier') }}</button>
+{{ form_end(form) }}
+<a href="{{ path('user_index') }}">back to list</a>
+{{ include('user/_delete_form.html.twig') }}</div><div id='scroll_to_top' class='opacity'>
+<img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut"></div><script src="{{ asset('js/menu.js') }}"></script><script type="text/javascript" src="{{ asset('js/jQuery_lib.js') }}"></script><script type="text/javascript" src="{{ asset('js/jQuery.js') }}"></script>{% endblock %}

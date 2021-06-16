@@ -1,0 +1,169 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EMP{% endblock %}
+    {% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/EMP.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/SAJ.css') }}>" />
+    {% endblock %}
+
+{% block body %}
+<body class="home">
+    <div class="container">
+
+        <ol class="breadcrumb">
+            <li><a href="{{ asset('accueil') }}">Accueil</a></li>
+            <li class="active">RÉSIDENCE</li>
+        </ol>
+        <div class="Nom-asso1">
+            <h1 class="Nom-asso2">RÉSIDENCE LES TROIS RIVIERES
+            </h1>
+        </div>
+        <div class="repere">
+            <table class="lienDirect">
+                <tr>
+                    <td class="balise"><a href="#Presentation"><img src="{{ asset('images/logo.png') }}" alt="Localisation" width="50px" height="40px"> Présentation</a></td>
+                    <td class="balise2"><a href="#Localisation"><img src="{{ asset('images/SAJ-localisation.webp') }}" alt="Localisation" width="50px"> Accès</a></td>
+                </tr>
+                <tr>
+                    <td class="balise"><a href="#accompagnée"><img src="{{ asset('images/SAJ-Admission.webp') }}" alt="equipe" width="50px"> Admission</a></td>
+                    <td class="balise2"><a href="#equipe"><img src="{{ asset('images/SAJ-equipe.jpg') }}" alt="equipe" width="50px"> Notre équipe</a></td>
+
+                </tr>
+                <tr>
+                    <td class="balise"><a href="#quotidien"><img src="{{ asset('images/SAJ-quotidien.webp') }}" alt="quotidien" height="50px" width="50px"> Notre quotidien</a></td>
+                    <td class="balise2"><a href="#financement"><img src="{{ asset('images/SAJ-euros.webp') }}" alt="financement" height="50px" width="50px"> Financement</a></td>
+                </tr>
+                <tr>
+                    <td class="balise"><a href="assets/documents/Règlement de fonctionnement Résidence FH.pdf"><img src="{{ asset('images/PDF.webp') }}" alt="quotidien" height="50px" width="40px"> REGLEMENT DE FONCTIONNEMENT</a></td>
+
+                </tr>
+            </table>
+        </div>
+
+        <div class="row">
+
+            <!-- Article main content -->
+            <article class="col-sm-8 maincontent" id="Presentation">
+                <header class="page-header">
+                    <h1 class="page-title">A propos de nous</h1>
+                </header>
+                <h3>L'association Leila</h3>
+                <!--<img src="assets/images/mac.jpg" alt="" class="img-rounded pull-right" width="300"> -->
+                <p>L'association L.E.I.L.A créée en 1963, est présidée per Monsieur Nordigne ISSAAD. Elle est ouverte à toutes personnes (résident, famille, amis) qui désire y adhérer. Son Comseil d'Administration est composé de 10 membres (Maire de Stains, élus de la commune, inspecteur d'Académie, conseiller général...) et 10 membres élus (personnes physiques). IL se réunit deux fois par an.
+                    <br>Elle gère, outre la résidence Les Trois Rivières «Foyer d'Hébergement », un Service d'Accompagnement à la Vie Sociale (SAVS), un Service d'Accueil de Jour (SAJ) et l'EMP Henri Wallon à Stains qui accueille en externat des enfants en situation de hendicap.
+                </p>
+                <h3>Notre mission</h3>
+                <p>Le projet de la Résidence Les Trois Rivières prend appui sur les valeurs de l'association, en phase avec les lois 2002-
+                    2 et 2005-102.
+                    <br> Vous restez acteur de votre projet de vie, de votre participation à la vie sociale et de votre inscription dans le tissu
+                    local.
+                    <br>L'équipe de professionnels est là pour vous accompagner dans l'élaboration et la concrétisation de vos projets,
+                    prenant en compte votre rythme, vos désirs et vos capacités.
+                    <br>Notre objectif principal est de vous amener a trouver l'équilibre nécessaire entre les contraintes liées à la vie en
+                    collectivité, en société et vos souhaits.
+                </p>
+                <div id="Localisation"></div>
+                <header class="page-header">
+                    <h1 class="page-title">Le foyer d'hébergement</h1>
+                </header>
+                <h3>L'environnement</h3>
+                <p>Le Foyer d'Hebergement < Residence Les Trois Rivieres est integre dans le quartier du Moulin Neuf, tres actif dans la commune de STAINS. Il se trouve a proximite du Parc de la Courneuve et d'un Centre Commercial.</p>
+                        <h3>Le bâtiment</h3>
+                        <p>Le Foyer d'Hebergement est ouvert 24h sur 24h, toute l'annee. <br>
+                            Il s'eleve sur deux etages et comprend 26 chambres meublees de 20 m2 avec salle d'eau et placard de rangement,
+                            15 studios de 31 m2 avec salle d'eau et coin cuisine et 4 chambres d'accueil temporaire.
+                            <br>
+                            Le rez-de-chaussee : hall ou se trouve votre boite aux lettres, la buanderie (accessible a tous), la lingerie, la salle a
+                            manger, la cuisine pedagogique, les bureaux de l'Assistante de Direction, de la Direction, de la Chef de Service, de
+                            I'Equipe Educative, de la Psychologue, la cuisine professionnelle, 10 chambres et 1 espace detente,
+                            <br>
+                            1 etage : 7 studios, 10 chambres, 1 salle de bain , 2 terrasses;
+                            <br>
+                            2 etage : 6 studios, 10 chambres, 1 salle d'activites et 1 salon esthetique.
+                            <br>
+                            A l'exterieur : Un S.A.V.S. de 30 personnes accompagnees en journee avec un patio commun et 1 parking.
+                            <br><br>
+                            Votre circulation au sein du Foyer d'Hebergement est libre tant qu'elle respecte la tranquillite des uns et des autres
+                            (voir le Reglement de Fonctionnement).
+                        </p>
+                        <h3>Un projet d’accompagnement individualisé revu annuellement
+                        </h3>
+                        <p>Une évaluation des capacités et des besoins de la personne permet de déterminer avec elle et son entourage les objectifs de travail et le programme d’activités.
+
+                        </p>
+                        <div id="quotidien"></div>
+                        <header class="page-header">
+                            <h1 class="page-title">Notre quotidien</h1>
+                        </header>
+                        <h3>Le quotidien en collectif</h3>
+                        <img src="{{ asset('images/SAJ-peinture.png') }}" alt="" class="img-rounded pull-left" width="350" height="250">
+                        <p>L’équipe du SAJ et les personnes accueillies mettent le quotidien au travail à travers :
+                            <br><br>- un projet annuel de créations artistiques présenté publiquement.
+                            <br>- une démarche éco-citoyenne.
+                            <br>- un lien étroit avec les ressources du territoire.
+                        </p>
+                        <br><br><br><br>
+                        <h3>Des activités :</h3>
+                        <p>- Manuelles (arts plastiques, jardinage…)
+                            <img src="{{ asset('images/SAJ-jardin.png') }}" alt="" class="img-rounded pull-right" width="370" height="250">
+                            <br><br>- D’expression avec des outils et médias créatifs adaptés
+                            <br><br>- Liées à la vie quotidienne (cuisine, esthétique, courses, transports …)
+                            <br><br>- Physiques (relaxation, marche…)
+                            <br><br>- Ludiques
+                            <br><br>- Temps libres (repos, activités au choix,…)
+                        </p>
+                        <h3>Avec des objectifs d’autonomie :
+                        </h3>
+                        <img src="{{ asset('images/SAJ-Gateaux.png') }}" alt="" class="img-rounded pull-left" width="370" height="250">
+                        <p>- Vivre le quotidien et se l’approprier
+                            <br><br>- Créer et maintenir du lien social
+                            <br><br>- S’exprimer et s’impliquer en tant que citoyen
+                        </p>
+                        <br><br><br><br><br><br>
+                        <h3>Repas et transport
+                        </h3>
+                        <p>En cas de nécessité, l’Etablissement peut organiser le transport pour les personnes accueillies.
+                            <br> Le repas du midi fait partie de l’accompagnement.
+
+                        </p>
+                        <h3>Une journée type</h3>
+                        <img src="{{ asset('images/SAJ-TypeJournée.png') }}" alt="" class="img-rounded journee pull-left" width="450">
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        
+                        <div id="equipe">
+                        </div>
+                        <header class="page-header">
+                            <h1 class="page-title">Notre équipe</h1>
+                        </header>
+                        <h3>L'équipe</h3>
+                        <p>L’équipe du SAJ est composée de :
+                            <br><br>- 2 éducatrices spécialisées,
+                            <br><br>- 1 conseillère en économie sociale familiale,
+                            <br><br>Le directeur et la responsable du service assurent l’encadrement.
+                            <br>La présence d’une psychologue, au sein du SAJ apparaît incontournable au vu du public accueilli.
+                        </p>
+                        <div id="financement">
+                        </div>
+                        <header class="page-header">
+                            <h1 class="page-title">Financement</h1>
+                        </header>
+                        <p>Le SAJ est financé par l’Aide Sociale du département de la Seine-Saint-Denis.
+                            <br><br>La personne accompagnée participe aux frais d’accueil et de transport.
+
+                        </p>
+                        <br>
+
+            </article>
+            <!-- /Article -->
+
+        </div>
+    </div> <!-- /container -->
+
+    <div id='scroll_to_top' class='opacity'>
+        <img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut">
+    </div>
+    {% block javascripts %}
+            <script src="{{ asset('js/menu.js') }}"></script>
+        {% endblock %}
+</body>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/login-out.css') }}"/>
+
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+    <form method="post">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="mb-3">
+                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+            </div>
+        {% endif %}
+
+        <ol class="breadcrumb">
+<li>
+	<a href="{{ path('accueil') }}">Accueil</a>
+</li>
+
+            <li class="active">Connexion</li>
+        </ol>
+        <div class="Nom-asso1">
+            <h1 class="Nom-asso2">Connexion
+            </h1>
+        </div>
+    <div class="conect">
+        <label for="inputUsername">Email</label>
+            <input type="text" value="{{ last_username }}" name="email" id="inputUsername" class="form-control" autocomplete="email" required autofocus>
+        <label class="mdp-conect" for="inputPassword" >Mot de passe</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" name="_remember_me"> Se souvenir de moi
+                </label>
+            </div>
+
+        <button class="btn btn-lg  btn_conect" type="submit">
+            Connexion
+        </button>
+    </div>
+
+    </form></br>
+    
+</div>
+<div id='scroll_to_top' class='opacity'>
+        <img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut">
+    </div>
+<script src="{{ asset('js/menu.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jQuery_lib.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jQuery.js') }}"></script>
+{% endblock %}

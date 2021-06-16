@@ -1,0 +1,25 @@
+.block{
+    width: 70%;
+    border-radius: 10px;
+    margin: auto;
+    padding: 20px;
+}   
+.btn_inscript {
+    width: fit-content;
+    margin: auto;
+}
+.conect{
+    width: 70%;
+    margin: auto;
+}
+.mdp-conect{
+    margin-top: 15px;
+}
+.btn-lg{
+   background-color: rgb(53, 182, 174);
+   color: white;
+}
+.btn-lg:hover{
+   background-color: rgb(44, 150, 143);
+   color: white;
+}

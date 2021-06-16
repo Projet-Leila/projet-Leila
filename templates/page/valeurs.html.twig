@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}presentation
+{% endblock %}
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+	<body class="home">
+		<div class="container">
+
+			<ol class="breadcrumb">
+				<li>
+					<a href="{{ path('accueil') }}">Accueil</a>
+				</li>
+				<li class="active">Nos Valeurs</li>
+			</ol>
+			<div class="Nom-asso1">
+				<h1 class="Nom-asso2">Association Leila
+				</h1>
+			</div>
+		</div>
+		<!-- /container -->
+			<div class="container">
+				<h3 class="text-center thin value">Nos Valeurs</h3> </br>
+
+				<div class="row">
+					<div class="h-caption">
+						<h4 style="color: red;">Humanisme</h4>
+					</div>
+					<div class="h-caption">
+						<h4 style="color: orange;">Laïcité</h4>
+					</div>
+					<div class="h-caption">
+						<h4 style="color: #d9d949;">Bientraitance</h4>
+					</div>
+					<div class="h-caption">
+						<h4 style="color: green;">Inclusion sociale, scolaire et professionnelle</h4>
+					</div>
+					<div class="h-caption">
+						<h4 style="color: blue;">Et bien d’autres encore affirmées dans les Déclarations des Droits de l’Homme et de l’Enfant, la Charte des Droits et des Libertés de la Personne accueillie</h4>
+					</div>
+					<div class="h-caption">
+						<h4 style="color: purple;">Ainsi que les recommandations de bonnes pratiques professionnelles de l’HAS.</h4>
+					</div>
+                    </br></br>
+		<img src="{{ asset('images/Group_V.png') }}" alt="groupe-valeur">		
+			</div>
+		</div>
+		<!-- /row -->
+	</body>
+</div>
+<!-- /Highlights -->
+<div id='scroll_to_top' class='opacity'>
+<img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut"></div>{% block javascripts %}
+<script src="{{ asset('js/menu.js') }}">
+</script>
+{% endblock %}
+</body>
+{% endblock %}

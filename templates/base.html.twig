@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Leila -  {% block title %}Leila{% endblock %}</title>
+        
+        <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.css') }}" media="screen">
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/carrousel.css') }}" />
+        {% block stylesheets %}
+            {#{{ encore_entry_link_tags('app') }}#}
+        {% endblock %}
+		<script src="{{ asset('js/menu.js') }}"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="{{ asset('js/headroom.min.js') }}"></script>
+        <script src="{{ asset('js/jQuery.headroom.min.js') }}"></script>
+		<script src="{{ asset('js/scroll_top.js') }}"></script>
+        <script src="{{ asset('js/template.js') }}"></script> <!-- menu responsive -->
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+    </head>
+    <body class="home">
+    <div class="navb">
+        <div class="navbar navbar-inverse navbar-fixed-top headroom">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Button for smallest screens -->
+                    <a class="navbar-brand" href="{{ path('accueil') }}"><img src="{{ asset('images/logo.png') }}" alt="Leila Logo"></a>
+                    <div class="name_top_menu">ASSOCIATION LEILA</div>
+                    <button type="button" class="navbar-toggle" ><div><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></div><div class="name_menu"> Menu</div>  </button>
+                    
+                    
+                </div>
+                <div class="">
+                    <ul class="nav">
+                        <li><a href="{{ path('accueil') }}" class="active_menu">Accueil</a></li>
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">L'Association <b class="caret"></b></a>
+                            <ul class="dropdown-menu1">
+                                <li class="asso"><a  href="{{ path('presentation') }}">Présentation</a></li>
+                                <li class="asso" ><a href="{{ path('valeurs') }}">Nos valeurs</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nos établissements <b class="caret"></b></a>
+                            <ul class="dropdown-menu1">
+                                <li class="asso" ><a href="{{ path('SAJ') }}">S.A.J</a></li>
+                                <li class="asso" ><a href="{{ path('EMP') }}">EMP</a></li>
+                                <li class="asso" ><a href="{{ path('SAVS') }}">S.A.V.S</a></li>
+                                <li class="asso" ><a href="{{ path('RESIDENCE') }}">RÉSIDENCE</a></li>
+                            </ul>
+                        </li>
+						
+						<li><a href="{{ path('contact') }}">Recrutement</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Téléchargements<b class="caret"></b></a>
+                            <ul class="dropdown-menu1">
+                                <li class="asso" ><a href="{{ path('legaux') }}">Document légaux</a></li>
+                                <li class="asso" ><a href="">Document divers</a></li>
+                            </ul>
+                        </li>
+						<li><a href="{{ path('contact') }}">Adhésion</a></li>
+                        <li><a href="{{ path('contact') }}">Contact</a></li>
+                        {% if app.user %}
+                                <li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ app.user.username }}<b class="caret"></b></a>
+									<ul class="dropdown-menu1">
+										<li><a class="btn btn-sm btn-danger" href="{{ path('app_logout') }}">Déconnexion</a></li>
+                                    </ul>
+                                </li>
+                        {% else %}
+                            <li><a class="btn1 btn-sm " href="{{ path('user_new') }}">S'inscrire</a></li> 
+                            <li><a class="btn2 btn-sm " href="{{ path('app_login') }}">Se connecter</a></li> 
+                                
+                        {% endif %}
+                    </ul>
+                </div>
+                <a href="Don.php" class="Don_a">
+                    <div class="Don">
+                        <img src="{{ asset('images/hand-heart.svg') }}" alt="heart"><span>&ensp;&ensp;Faire un Don</span>
+                    </div>
+                </a>
+                <!--/.nav-collapse -->
+
+            </div>
+        </div>
+    </div>
+        {% block body %}{% endblock %}
+        <footer id="footer" class="top-space">
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contact</h3>
+						<div class="widget-body">
+							<p>01 40 46 24 40<br>
+								<a href="mailto:contact@asso-leila.org ">contact@asso-leila.org </a><br>
+								<br>
+								Mail des trois rivière. Moulin 93240 Stains
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Nous suivre</h3>
+						<div class="widget-body">
+							<p class="follow-me-icons">
+								<a href=""><i class="fa fa-twitter fa-2"></i></a>
+								<a href=""><i class="fa fa-linkedin fa-2"></i></a>
+								<a href=""><i class="fa fa-github fa-2"></i></a>
+								<a href="{{ asset('https://fr-fr.facebook.com/Association-Leila-Les-Trois-Rivieres-1595364030570637/') }}"><i class="fa fa-facebook fa-2"></i></a>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<h3 class="widget-title">Association LEILA</h3>
+						<div class="widget-body">
+<p>A ce jour, l’Association intervient exclusivement dans le champs du handicap.</p>
+
+                    La diversité des établissements permet la mise en place d’un travail cohérent autour de la fluidité des parcours des personnes accompagnées.
+                        </p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="simplenav">
+								<a href="{{ path('accueil') }}">Accueil</a> |
+								<a href="{{ path('SAJ') }}">S.A.J</a> |
+								<a href="{{ path('EMP') }}">EMP</a> |
+								<a href="{{ path('SAVS') }}">S.A.V.S</a> |
+								<!--<a href="{{ path('RESIDENCE') }}">Résidence</a> |
+                                <a href="{{ path('contact') }}">Recrutement</a> |
+                                <a href="{{ path('legaux') }}">Document légaux</a> |
+                                <a href="">Document divers</a> |
+						        <a href="{{ path('contact') }}">Adhésion</a> |
+                                <a href="{{ path('contact') }}">Contact</a> |-->
+                                {% if app.user %}
+                                
+                                {% else %}
+                                    <b><a href="{{ path('app_login') }}">Connexion</a>/<a href="{{ path('user_new') }}">Inscription</a></b>
+                                {% endif %}
+								
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="text-right">
+								Copyright &copy; 2021 Designed by Nassim Barkallah
+							</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+        {% block footer %}{% endblock %}
+
+    </body>
+</html>

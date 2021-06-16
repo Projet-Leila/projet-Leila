@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Acceuil
+    
+{% endblock %}
+{% block stylesheets %}
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/SAVS.css?') }}" />
+{% endblock %}
+
+{% block body %}
+    <body class="home">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="{{ path('accueil') }}">
+                        Accueil
+                                            
+                    </a>
+                </li>
+                <li class="active">
+                    Documents légaux
+                                    
+                </li>
+            </ol>
+            <div class="Nom-asso1">
+                <h1 class="Nom-asso2">
+                    Téléchargements                  
+                </h1>
+            </div>
+            <div>
+                <div>
+                    Livret d'accueil                
+                </div>
+                <div>
+                    - Livret Accueil SAJ<a href="{{ asset('documents/Livret_Accueil_SAJ.docx') }}" download><img src="{{ asset('images/word.svg') }}" alt=""></a>
+                </div>
+                <div>
+                    - Livret Accueil Résidence<a href="{{ asset('documents/livret_d\'accueil_FH.pdf') }}" download><img src="{{ asset('images/pdf.svg') }}" alt=""></a><a href="{{ asset('documents/Livret_residence.docx') }}" download><img src="{{ asset('images/word.svg') }}" alt=""></a>
+                </div>
+                <div>
+                    Charte 
+                </div>
+                <div>
+                    - Charte des droits et libertes<a href="{{ asset('documents/CHARTE_DES_DROITS_ET_LIBERTES.pdf') }}" download><img src="{{ asset('images/pdf.svg') }}" alt=""></a>
+                </div>
+                <div>
+                    - Charte des droits et libertes de la personne accueillie<a href="{{ asset('documents/charte_droits_libertés.pdf') }}" download><img src="{{ asset('images/pdf.svg') }}" alt=""></a><a href="{{ asset('documents/charte_RTR_FH.dotx') }}" download><img src="{{ asset('images/word.svg') }}" alt=""></a>
+                </div>
+                <div>
+                    - Annexe à la Charte des droits et libertés<a href="{{ asset('documents/annexes_charte.docx') }}" download><img src="{{ asset('images/word.svg') }}" alt=""></a>
+                </div>
+                <div>
+                    Le fonctionnement de nos Association
+                </div>
+                <div>
+                    - Règlement fonctionnement SAJ<a href="{{ asset('documents/Règlement_fonctionnement_SAJ.docx') }}" download><img src="{{ asset('images/word.svg') }}" alt=""></a>
+                </div>
+                <div>
+                    - Règlement fonctionnement Résidence<a href="{{ asset('documents/Règlement_de_fonctionnement_Résidence.pdf') }}" download><img src="{{ asset('images/pdf.svg') }}" alt=""></a><a href="{{ asset('documents/Règlement_de_fonctionnement_Résidence.docx') }}" download><img src="{{ asset('images/word.svg') }}" alt=""></a>
+                </div> 
+            </div>
+        </div>
+        <div id='scroll_to_top' class='opacity'>
+            <img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut">
+        </div>
+         <!-- js-->
+        <script src="{{ asset('js/menu.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jQuery_lib.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jQuery.js') }}"></script>
+    </body>
+                                            {% endblock %}
+                                            
