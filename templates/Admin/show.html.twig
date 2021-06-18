@@ -1,47 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Admin{% endblock %}
+{% block title %}User{% endblock %}
 
 {% block body %}
-
-    <h1>Nos utilisateurs</h1>
+<div class="container">
+    <h1>User</h1>
 
     <table class="table">
-        <thead>
+        <tbody>
             <tr>
                 <th>Id</th>
-                <th>name</th>
-                <th>Lastname</th>
-                <th>Email</th>
-                <th>Tel</th>
-                <th>Roles</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
                 <td>{{ user.id }}</td>
-                <td>{{ user.username }}</td>
-                <td>{{ user.lastname }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.tel }}</td>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                
-                <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
-                </td>
             </tr>
-        {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <th>name</th>
+                <td>{{ user.username }}</td>
             </tr>
-        {% endfor %}
+            <tr>
+                <th>Lastname</th>
+                <td>{{ user.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ user.tel }}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ user.password }}</td>
+            </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('user_new') }}">Créer un nouveau utilisateur</a>
+    <a href="{{ path('user_index') }}">back to list</a>
+
+    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+
+    {{ include('user/_delete_form.html.twig') }}
 </div>
     <div id='scroll_to_top' class='opacity'>
         <img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut">

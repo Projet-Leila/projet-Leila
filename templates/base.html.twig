@@ -62,7 +62,7 @@
                             </ul>
                         </li>
 						
-						<li><a href="{{ path('contact') }}">Recrutement</a></li>
+						<li><a href="{{ path('recrutement') }}">Recrutement</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Téléchargements<b class="caret"></b></a>
                             <ul class="dropdown-menu1">
@@ -76,6 +76,12 @@
                                 <li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ app.user.username }}<b class="caret"></b></a>
 									<ul class="dropdown-menu1">
+                                        {% if 'ROLE_USER' in app.user.roles %}
+                                        <li><a href="{{ path('user_show', {'id': app.user.id}) }}">Mon profil</a></li>
+                                        {% endif %}
+                                        {% if 'ROLE_ADMIN' in app.user.roles %}
+                                        <li><a href="{{ path('adm_user_index') }}">Nos utilisateurs</a></li>
+                                        {% endif %}
 										<li><a class="btn btn-sm btn-danger" href="{{ path('app_logout') }}">Déconnexion</a></li>
                                     </ul>
                                 </li>
@@ -151,14 +157,14 @@
 								<a href="{{ path('SAJ') }}">S.A.J</a> |
 								<a href="{{ path('EMP') }}">EMP</a> |
 								<a href="{{ path('SAVS') }}">S.A.V.S</a> |
-								<!--<a href="{{ path('RESIDENCE') }}">Résidence</a> |
-                                <a href="{{ path('contact') }}">Recrutement</a> |
+								<a href="{{ path('RESIDENCE') }}">Résidence</a> |
+                                <!--<a href="{{ path('contact') }}">Recrutement</a> |
                                 <a href="{{ path('legaux') }}">Document légaux</a> |
                                 <a href="">Document divers</a> |
 						        <a href="{{ path('contact') }}">Adhésion</a> |
                                 <a href="{{ path('contact') }}">Contact</a> |-->
                                 {% if app.user %}
-                                
+                                    <b><a href="{{ path('app_logout') }}">Déconnexion</a></b>
                                 {% else %}
                                     <b><a href="{{ path('app_login') }}">Connexion</a>/<a href="{{ path('user_new') }}">Inscription</a></b>
                                 {% endif %}

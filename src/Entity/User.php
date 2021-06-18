@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -53,6 +55,16 @@ class User implements UserInterface
      * @ORM\OneToMany(targetEntity="TgRecrute", mappedBy="users", cascade={"persist", "remove"})
      */
     private $recruteId;
+
+    /**
+     * @ORM\OneToMany(targetEntity=TgReponse::class, mappedBy="user", orphanRemoval=true)
+     */
+    private $tgReponses;
+
+    public function __construct()
+    {
+        $this->tgReponses = new ArrayCollection();
+    }
 
 
 
@@ -191,5 +203,35 @@ class User implements UserInterface
     public function setRecruteId($recruteId): void
     {
         $this->recruteId = $recruteId;
+    }
+
+    /**
+     * @return Collection|TgReponse[]
+     */
+    public function getTgReponses(): Collection
+    {
+        return $this->tgReponses;
+    }
+
+    public function addTgReponse(TgReponse $tgReponse): self
+    {
+        if (!$this->tgReponses->contains($tgReponse)) {
+            $this->tgReponses[] = $tgReponse;
+            $tgReponse->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTgReponse(TgReponse $tgReponse): self
+    {
+        if ($this->tgReponses->removeElement($tgReponse)) {
+            // set the owning side to null (unless already changed)
+            if ($tgReponse->getUser() === $this) {
+                $tgReponse->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }

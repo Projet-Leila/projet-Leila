@@ -5,7 +5,7 @@
 
 {% block body %}
 	<div class="container">
-		<h1>Modifier mes information</h1>
+		<h1>Modifier les information de {{ user.username }}</h1>
 		{{ form_start(form, {'attr': {'id': 'new_edit_utilisateur'}}) }}
 		{# utilisation de classes bootstrap pour la mise en forme #}
 		<div class="row">
@@ -20,33 +20,33 @@
 			<div class="col-12">
 				{{ form_label(form.tel) }}
 				{{ form_widget(form.tel) }}
-			</div></br>
-			<select name="role_change" id="role_change">
+			</div>
+			<select
+				name="role_change" id="role_change">
 				<option value="ROLE_USER">Utilisateur</option>
 				<option value="ROLE_ADMIN" {% if "ROLE_ADMIN" in user.roles %} selected {% endif %}>Administrateur</option>
 
 				<option value="ROLE_DON" {% if "ROLE_DON" in user.roles %} selected {% endif %}>Donateur</option>
 
-			</select> </br>
+			</select>
 
 			<div class="col-12">
 				{{ form_label(form.email) }}
 				{{ form_widget(form.email) }}
 			</div>
-			<div class="col-12">
-			<label>Mot de passe</label>
-			{{ form_widget(form.password) }}
-			</div>
-			<div class="col-12">
-			<label for="verifpass">Saisir une seconde fois le mot de passe</label>
-			</br>
-			<input class="form-control" type="password" id="verifpass" required>
-			</div>
-		<button class="btn btn-success">{{ button_label|default('Modifier') }}</button>
-	{{ form_end(form) }}
-	<a href="{{ path('user_index') }}">back to list</a>
-	{{ include('user/_delete_form.html.twig') }}</div>
+	</div>
 </div>
-<div id='scroll_to_top' class='opacity'>
+<button class="btn btn-success">{{ button_label|default('Modifier') }}</button>
+<a href="{{ path('user_index') }}">back to list</a>
+{{ include('user/_delete_form.html.twig') }}
+</div>
 
-<img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut"></div><script src="{{ asset('js/menu.js') }}"></script><script type="text/javascript" src="{{ asset('js/jQuery_lib.js') }}"></script><script type="text/javascript" src="{{ asset('js/jQuery.js') }}"></script>{% endblock %}
+<div id='scroll_to_top' class='opacity'>
+<div id='scroll_to_top' class='opacity'>
+	<img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut">
+</div>
+
+<script src="{{ asset('js/menu.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jQuery_lib.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jQuery.js') }}"></script>
+{% endblock %}

@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -21,7 +23,7 @@ class TgRecrute
 
     /**
      * @var string
-     * @ORM\Column(name="lb_titre", type="string", length=100, nullable=true)
+     * @ORM\Column(name="lb_titre", type="string", length=100, nullable=false)
      * @Assert\Length(
      *      max = 100,
      *      maxMessage = "Le titire est limité à {{ limit }} caractères"
@@ -64,6 +66,16 @@ class TgRecrute
      * @ORM\ManyToOne(targetEntity="TrPublication", inversedBy="recruteId")
      */
     private $publications;
+
+    /**
+     * @ORM\OneToMany(targetEntity=TgReponse::class, mappedBy="reponse", orphanRemoval=true)
+     */
+    private $tgReponses;
+
+    public function __construct()
+    {
+        $this->tgReponses = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -191,6 +203,36 @@ class TgRecrute
     public function setPublications($publications): void
     {
         $this->publications = $publications;
+    }
+
+    /**
+     * @return Collection|TgReponse[]
+     */
+    public function getTgReponses(): Collection
+    {
+        return $this->tgReponses;
+    }
+
+    public function addTgReponse(TgReponse $tgReponse): self
+    {
+        if (!$this->tgReponses->contains($tgReponse)) {
+            $this->tgReponses[] = $tgReponse;
+            $tgReponse->setReponse($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTgReponse(TgReponse $tgReponse): self
+    {
+        if ($this->tgReponses->removeElement($tgReponse)) {
+            // set the owning side to null (unless already changed)
+            if ($tgReponse->getReponse() === $this) {
+                $tgReponse->setReponse(null);
+            }
+        }
+
+        return $this;
     }
 
 }

@@ -90,6 +90,21 @@ class PageController extends AbstractController
     }
 
     /**
+     * @Route("/Recrutement", name="recrutement")
+     */
+    public function recrutement()
+    {
+        $repo = $this->getDoctrine()->getRepository(TgRecrute::class);
+
+        $articles = $repo->findAll();
+
+        return $this->render('page/recrutement.html.twig', [
+            'controller_name' => 'PageController',
+            'articles' => $articles
+        ]);
+    }
+
+    /**
      * @Route("/Contact", name="contact")
      */
     public function Contact(): Response
