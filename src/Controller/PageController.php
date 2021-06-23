@@ -5,7 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use App\Entity\TgRecrute;
 class PageController extends AbstractController
 {
    
@@ -96,11 +96,11 @@ class PageController extends AbstractController
     {
         $repo = $this->getDoctrine()->getRepository(TgRecrute::class);
 
-        $articles = $repo->findAll();
+        $post = $repo->findAll();
 
         return $this->render('page/recrutement.html.twig', [
             'controller_name' => 'PageController',
-            'articles' => $articles
+            'articles' => $post
         ]);
     }
 

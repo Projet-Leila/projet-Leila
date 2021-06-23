@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserType;
+use App\Form\RecruteType;
 use App\Entity\TgRecrute;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -11,12 +12,34 @@ use App\Repository\UserRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 /**
  * @Route("/admin")
  */
 
 class AdminController extends AbstractController
 {
+    /**
+     * @Route("/Formulaire_Recrutement", name="adm_recrut")
+     */
+    public function created(Request $request): Response
+    {
+        $TgRecrute = new TgRecrute();
+    
+        $form = $this->createForm(RecruteType::class, $TgRecrute);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($TgRecrute);
+            $entityManager->flush();
+            return $this->redirectToRoute('recrutement');
+        }
+    
+        return $this->render('Admin/recrut.html.twig', [
+            'recrut' => $form->createView()
+        ]);
+    }
 
     /**
      * @Route("/Nos_utilisateurs", name="adm_user_index", methods={"GET"})
@@ -69,25 +92,5 @@ class AdminController extends AbstractController
         }
 
         return $this->redirectToRoute('user_index');
-    }
-    /**
-     * @Route("/Formulaire_Recrutement", name="adm_recrut")
-     */
-    public function created()
-    {
-        $TgRecrute = new TgRecrute();
-
-        $form = $this->createFormBuilder($TgRecrute)
-            ->add("publications")
-            ->add("lbTitre")
-            ->add("lbDescription")
-            ->add("dateDebut")
-            ->add("dateFin")
-            ->getForm();
-
-
-        return $this->render('Admin/recrut.html.twig', [
-            'recrut' => $form->createView()
-        ]);
     }
 }

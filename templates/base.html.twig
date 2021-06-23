@@ -31,8 +31,8 @@
     <body class="home">
     <div class="navb">
         <div class="navbar navbar-inverse navbar-fixed-top headroom">
-            <div class="container">
-                <div class="navbar-header">
+            <div class="container menuTop">
+                <div class="navbar-header menuTop">
                     <!-- Button for smallest screens -->
                     <a class="navbar-brand" href="{{ path('accueil') }}"><img src="{{ asset('images/logo.png') }}" alt="Leila Logo"></a>
                     <div class="name_top_menu">ASSOCIATION LEILA</div>
@@ -77,12 +77,12 @@
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ app.user.username }}<b class="caret"></b></a>
 									<ul class="dropdown-menu1">
                                         {% if 'ROLE_USER' in app.user.roles %}
-                                        <li><a href="{{ path('user_show', {'id': app.user.id}) }}">Mon profil</a></li>
+                                            <li  class="asso"> <a href="{{ path('user_show', {'id': app.user.id}) }}">Mon profil</a></li>
                                         {% endif %}
                                         {% if 'ROLE_ADMIN' in app.user.roles %}
-                                        <li><a href="{{ path('adm_user_index') }}">Nos utilisateurs</a></li>
+                                        <li class="asso"><a href="{{ path('adm_user_index') }}">Nos utilisateurs</a></li>
                                         {% endif %}
-										<li><a class="btn btn-sm btn-danger" href="{{ path('app_logout') }}">Déconnexion</a></li>
+										<li class="asso"><a  href="{{ path('app_logout') }}">Déconnexion</a></li>
                                     </ul>
                                 </li>
                         {% else %}

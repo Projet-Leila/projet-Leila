@@ -9,32 +9,28 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>numéro d'identification</th>
                 <td>{{ user.id }}</td>
             </tr>
             <tr>
-                <th>name</th>
+                <th>Nom</th>
                 <td>{{ user.username }}</td>
             </tr>
             <tr>
-                <th>Lastname</th>
+                <th>Prénom</th>
                 <td>{{ user.lastname }}</td>
             </tr>
             <tr>
-                <th>Email</th>
+                <th>Adresse mail</th>
                 <td>{{ user.email }}</td>
             </tr>
             <tr>
-                <th>Tel</th>
+                <th>Téléphone</th>
                 <td>{{ user.tel }}</td>
             </tr>
             <tr>
                 <th>Roles</th>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ user.password }}</td>
             </tr>
         </tbody>
     </table>

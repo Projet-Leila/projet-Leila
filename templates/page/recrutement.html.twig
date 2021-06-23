@@ -1,2 +1,42 @@
-recrutement
+{% extends 'base.html.twig' %}
+
+{% block title %}presentation
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/presentation.css') }}"/>
+
+{% endblock %}
+
+{% block body %}
+	<body class="home">
+		<div class="container">
+			<ol class="breadcrumb">
+				<li>
+					<a href="{{ path('accueil') }}">
+						Accueil
+					</a>
+				</li>
+				<li class="active">
+					Recrutement
+				</li>
+			</ol>
+			<div class="Nom-asso1">
+				<h1 class="Nom-asso2">
+					Recrutement
+				</h1>
+			</div>
+			{% for article in articles %}
+			<h2>{{ article.publications }}
+
+		{% endfor %} 
+		</div>
+	</body>
+<!-- /Article -->
+<div id='scroll_to_top' class='opacity'>
+	<img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut">
+</div>
+{% block javascripts %}
+	<script src="{{ asset('js/menu.js') }}"></script>
+{% endblock %}</body>{% endblock %}
+
 

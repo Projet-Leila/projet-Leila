@@ -213,11 +213,13 @@ td a:hover {
 .contact_Block{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .block_c{
-  width: 50%;
+  width: 35%;
 }
 .block_c img{
+  margin: auto;
   width: 80%;
 }
 /* Helpers */
@@ -361,6 +363,9 @@ img.pull-left {
   margin: 0 5px;
 }
 /*menu*/
+.menuTop{
+  height: 90px;
+}
 .nav {
   display: block;
   width: 250px;
@@ -506,7 +511,7 @@ img.pull-left {
     float: right;
     margin-top: 2px;
     position: relative;
-    bottom: 28px;
+    bottom: 1px;
   }
   .navbar-toggle {
     display: flex;
@@ -525,7 +530,7 @@ img.pull-left {
     text-align: center;
     width: fit-content;
     margin: auto;
-    font-size: 38px;
+    font-size: 54px;
   }
   .navbar-toggle {
     display: flex;
@@ -545,7 +550,7 @@ img.pull-left {
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     float: right;
-    margin-top: 39px;
+    margin-top: 54px;
   }
   .Don span {
     font-size: 13px;
@@ -581,7 +586,7 @@ img.pull-left {
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     float: right;
-    margin-top: 46px;
+    margin-top: 54px;
   }
   .Don span {
     font-size: 13px;
@@ -611,7 +616,7 @@ img.pull-left {
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     float: right;
-    margin-top: 77px;
+    margin-top: 54px;
   }
   .Don span {
     font-size: 13px;
