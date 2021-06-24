@@ -84,4 +84,9 @@ class TrPublication
         $this->recruteId = $recruteId;
     }
 
+    public function __toString(): string
+    {
+        return $this->getLbPublication();
+    }
+
 }

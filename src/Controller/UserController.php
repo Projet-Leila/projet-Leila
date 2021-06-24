@@ -17,6 +17,16 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class UserController extends AbstractController
 {
     /**
+     * @var UserRepository
+     */
+    private UserRepository $userRepository;
+
+    public function __construct(UserRepository  $userRepository)
+    {
+        $this->userRepository = $userRepository;
+    }
+
+    /**
      * @Route("/Nos_utilisateurs", name="user_index", methods={"GET"})
      */
     public function index(UserRepository $userRepository): Response
@@ -54,12 +64,13 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}", name="user_show", methods={"GET"})
      */
-    public function show(User $user): Response
+    public function show(Request $request): Response
     {
-
+        $user = $this->userRepository->find($request->attributes->get('id'));
         if($user_connect = $this->getUser() !== $user){
             return $this->redirectToRoute('accueil');
         }
+
         return $this->render('user/show.html.twig', [
             'user' => $user,
         ]);
@@ -68,8 +79,9 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}/Modifier", name="user_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, User $user, UserPasswordEncoderInterface $passwordEncoder): Response
+    public function edit(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
+        $user = $this->userRepository->find($request->attributes->get('id'));
         $form = $this->createForm(UserType::class, $user);    
         $form->handleRequest($request);
 
@@ -91,8 +103,9 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}", name="user_delete", methods={"POST"})
      */
-    public function delete(Request $request, User $user): Response
+    public function delete(Request $request): Response
     {
+        $user = $this->userRepository->find($request->attributes->get('id'));
         if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($user);

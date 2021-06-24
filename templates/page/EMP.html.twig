@@ -2,9 +2,7 @@
 
 {% block title %}EMP
 {% endblock %}
-{% block stylesheets %}
-
-{% endblock %}
+{% block stylesheets %}{% endblock %}
 
 {% block body %}
 
@@ -70,211 +68,100 @@
 			</div>
 		</div>
 
-    <div class="container">
+		<div class="container">
 
-		<div
-			class="row">
+			<div
+				class="row">
 
-			<!-- Article main content -->
-			<article class="col-sm-8 maincontent" id="Presentation">
-				<header class="page-header">
-					<h1 class="page-title">A propos de nous</h1>
+				<!-- Article main content -->
+				<article class="col-sm-8 maincontent" id="Presentation">
+					<header class="page-header">
+						<h1 class="page-title">A propos de nous</h1>
+					</header>
+					<h3>Présentation</h3>
+					<img src="{{ asset('images/EMP_home.jpg') }}" alt="" class="img-rounded pull-left" width="300">
+					<p>L’EMP Henri Wallon réactualise et modernise son projet d’établissement au regard :
+																																																																																																						
+																																																																																																										Des   lois   de   2002   rénovant   l'action   sociale   et   médico-sociale,   notamment l’affirmation et la promotion des droits des usagers, et de 2005 sur l'égalité des droits et des chances, la participation et la citoyenneté des personnes handicapées
+						<br><br>
+
+						Du schéma d’organisation sociale et médico-sociale du Conseil Départemental  de Seine Saint Denis et la Région Ile De France.
+						<br><br>
+
+						Des   recommandations   des   bonnes   pratiques   professionnelles   élaborées   par l’ANESM articulées autour du texte cadre « Bientraitance : définition et mise en œuvre »
+						<br><br>
+
+						Du projet et des valeurs portées par l’Association LEILA depuis sa création en 1963.
+						<br><br>
+
+						Les valeurs et les grandes idées de ces quatre fondamentaux constituent le ciment qui relie et unifie toutes les parties du projet d’établissement. Au  regard  de  ces  ressources,  nous  insisterons  donc  particulièrement  dans  notre  projet d’établissement sur :
+
+						<br><br><br></p>
+					<h3>Des valeurs et des principes</h3>
+					<br>
 				</header>
-				<h3>Nos missions :</h3>
-				<img src="{{ asset('images/SAVS-présentation.jpg') }}" alt="" class="img-rounded pull-left" width="300">
-				<p>Selon l'article D312-162 du code
-										                    de l'action sociale et des familles :
-					<i>« Les services d'accompagnement à la vie
-												                        sociale ont pour vocation de contribuer à
-												                        la réalisation du projet de vie de
-												                        personnes adultes handicapées par un
-												                        accompagnement adapté favorisant le
-												                        maintien ou la restauration de leurs
-												                        liens familiaux, sociaux, scolaires,
-												                        universitaires ou professionnels et
-												                        facilitant leur accès à l'ensemble des
-												                        services offerts par la collectivité. »</i>
-					<br><br><br>
-					<img src="{{ asset('images/SAVS-presentation2.png') }}" alt="presentation2" class="img-rounded pull-right" width="300">
-					<h4 class="mini-title">Leur mission implique :</h4>
-					<br>- Une assistance ou un
-										                accompagnement pour tout ou
-										                partie des actes essentiels de
-										                l'existence ;
-					<br><br>- Un accompagnement social en
-										                milieu ouvert et un apprentissage
-										                à l'autonomie.
-				</p>
-				<br><br>
-
-				<div id="Localisation"></div>
-				<header class="page-header">
-					<h1 class="page-title">Localisation</h1>
-				</header>
-
-				<!-- maps -->
-				<div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
-					<div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
-					<script>
-						(function () {
-var setting = {
-"height": 531,
-"width": 920,
-"zoom": 17,
-"queryString": "18 Rue de la Vieille Mer, 93240 Stains, France",
-"place_id": "ChIJ01efeOtr5kcR0ehCqcn3SKg",
-"satellite": false,
-"centerCoord": [
-48.95129226823684, 2.3948249500000074
-],
-"cid": "0xa848f7c9a942e8d1",
-"lang": "fr",
-"cityUrl": "/france/paris",
-"cityAnchorText": "Carte de Paris, Ile de France, France",
-"id": "map-9cd199b9cc5410cd3b1ad21cab2e54d3",
-"embed_id": "499489"
-};
-var d = document;
-var s = d.createElement('script');
-s.src = 'https://1map.com/js/script-for-user.js?embed_id=499489';
-s.async = true;
-s.onload = function (e) {
-window.OneMap.initMap(setting)
-};
-var to = d.getElementsByTagName('script')[0];
-to.parentNode.insertBefore(s, to);
-})();
-					</script>
-					<a href="https://1map.com/fr/map-embed">1 Map</a>
-				</div>
-				<!-- /maps -->
-				<h3>Horaires d'ouverture :</h3>
-				<table class="Horaire">
-					<tr>
-						<td class="jour">Lundi</td>
-						<td>09:00-21:00</td>
-					</tr>
-					<tr>
-						<td class="jour">Mardi</td>
-						<td>09:00-21:00</td>
-					</tr>
-					<tr>
-						<td class="jour">Mercredi</td>
-						<td>09:00-21:00</td>
-					</tr>
-					<tr>
-						<td class="jour">Jeudi</td>
-						<td>09:00-21:00</td>
-					</tr>
-					<tr>
-						<td class="jour">Vendredi</td>
-						<td>09:00-21:00</td>
-					</tr>
-					<tr>
-						<td class="jour">Samedi</td>
-						<td>09:00-21:00</td>
-					</tr>
-					<tr>
-						<td class="jour">dimanche</td>
-						<td>Fermé</td>
-					</tr>
-				</table>
-				<span class="small text-muted">*ne reçoit que sur rendez-vous.
-				</span>
-				<br><br>
-				<p>Un accueil libre et collectif est propose
-										                    tous les vendredis entre 16h et 19h aux
-										                    personnes accompagnées.
-										                    Des personnes oriente es par un service
-										                    exte rieur peuvent nous rejoindre.
-				</p>
+				<p>Les valeurs qui guident notre action ont pour socle les grandes valeurs républicaines ainsi que la législation en matière de handicap.</p>
 				<br>
-					<p>
-						<strong>Adresse</strong>
-						: 18, Rue de la Vieille Mer
-												                    93 240 STAINS
-						<br>
-						<strong>Téléphone :</strong>
-						01 85 58 68 14
-						<br>
-						<strong>Messagerie :</strong>
-						savs@asso-leila.org
-						<br>
-						savslestroisrivieres.blogspot.fr
-					</p>
-					<div id="accompagnée"></div>
-					<header class="page-header">
-						<h1 class="page-title">Admission au SAVS</h1>
-					</header>
-					<p>Les personnes désirant être accompagnées par le SAVS
-												                    peuvent formuler leur demande directement auprès du
-												                    service ou auprès des équipes qui l’accompagnent par
-												                    ailleurs (CCAS, CMP, ESAT,…). Lors d’un entretien
-												                    de préadmission, l’équipe du SAVS évalue la faisabilité
-												                    de l’accueil, en fonction des places dont il dispose et de
-												                    l’adaptation du projet de la personne aux possibilités
-												                    d’accompagnement du service.
-					</p>
-					<div id="equipe"></div>
-					<header class="page-header">
-						<h1 class="page-title">Notre équipe</h1>
-					</header>
-					<h3>L'équipe</h3>
-					<p>L’équipe accompagnante est composée de 4
-												                    professionnels de formations éducateur spécialisé,
-												                    travailleur social et psychologue.
-												                    La directrice et la responsable du service assurent
-												                    l’encadrement.
-					</p>
-					<div id="accueil"></div>
-					<header class="page-header">
-						<h1 class="page-title">Public accueilli</h1>
-					</header>
-					<p>Le SAVS dispose de 30 places pour accompagner
-												                    des personnes avec un handicap psychique et/ou
-												                    mental, bénéficiant d’une orientation en SAVS
-												                    délivrée par la MDPH et habitant l’une de nos villes
-												                    d’intervention : Aubervilliers, Drancy, Dugny,
-												                    Epinay-sur-Seine, Ile-Saint-Denis, La Courneuve,
-												                    Pantin, Pierrefitte-sur-Seine, Saint-Denis, SaintOuen, Stains et Villetaneuse.</p>
-					<div id="accompagnement"></div>
-					<header class="page-header">
-						<h1 class="page-title">l’accompagnement</h1>
-					</header>
-					<h3>Les différentes formes de l’accompagnement</h3>
-					<div id="financement"></div>
-					<img src="{{ asset('images/SAVS-ACCOMPAGNEMENT.png') }}" alt="presentation2" class="img-rounded pull-left" width="530">
-					<p>Plusieurs types d'accompagnement individuel et collectif sont proposés, dont le rythme et les modalités s'adaptent à chaque personne :<br>
-					</p>
-				</br>- La visite à domicile,
-				<br>- L’entretien et les démarches administratives,
-				<br>- L’accompagnement extérieur,
-				<br>- Les contacts téléphoniques,
-				<br>- Des réunions avec les partenaires pour coordonner
-								                    les interventions,
-				<br>- Des rencontres, ateliers, temps festifs ou sorties
-								                    collectives,
-				<br>- Un temps d’accueil libre et collectif au SAVS les
-								                    vendredis de 16h à 19h.
-			</p>
-			<br><br><br><br>
-			<header class="page-header">
-				<h1 class="page-title">Financement</h1>
-			</header>
-			<img src="{{ asset('images/SAVS-financement.png') }}" alt="presentation2" class="img-rounded pull-left" width="300">
-			<p>Le service est financé par le
-								                    Département de la Seine-Saint Denis. Cette prise en charge est
-								                    totale et ne donne pas lieu à
-								                    une participation financière de
-								                    la personne accompagnée.
-								                    Lors de repas ou de sorties, une
-								                    participation pourra être
-								                    demandée en accord avec le
-								                    règlement de fonctionnement</p>
-		</body>
-	</article>
-	<!-- /Article -->
+				<p>
+					<strong>
+						I.&emsp;   Respect de la Personne, des Droits et des Libertés</strong>
+				</p>
+				<p>La référence permanente à la législation (lois 2002-2 et 2005) assure à la personne accueillie un respect de ses droits fondamentaux : vie privée, confidentialité, droit à l’information …
+																																																																			La place centrale qu’occupe la personne accueillie lui assure un accompagnement qui prend en compte toute sa singularité et sa vulnérabilité grâce à une adaptation des professionnels à chaque situation.
+					<br><br>
 
-</div></div><!-- /container --><div id='scroll_to_top' class='opacity'>
-<img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut"></div>{% block javascripts %}
-<script src="{{ asset('js/menu.js') }}"></script>{% endblock %}{% endblock %}
+					Les représentants légaux sont informés de tout ce qui concerne le projet de la personne accueillie et sont des partenaires dans ce projet.
+				</p><br>
+
+				<p>
+					<strong>II. &emsp;     Principes d’égalité et de non-discrimination</strong>
+				</p>
+
+			</p>
+
+
+			<p>Notre idéal de justice sociale est réaffirmé à travers l’égalité de traitement qui est réservé à tous et par l’accompagnement proposé par notre service social.
+				<br><br>
+
+
+				Nous refusons toutes les  discriminations (origines, sexe, religion…) et acceptons, dans un   esprit de tolérance toutes formes de handicap qui sont conformes notre agrément.
+				<br><br>
+
+
+				Le respect de la loi 2005-102 du 11 février 2005 dite « La loi sur l’égalité des chances, la participation et la citoyenneté des personnes handicapées » renforce ces principes.
+			</p>
+			<br>
+
+			<strong>III.  &emsp;    Bientraitance</strong>
+
+
+			<p>La garantie d’un accueil individualisé et adapté ainsi que le suivi du projet par un référent unique et identifié  est un gage de la volonté de se mettre résolument dans le registre de la bientraitance.
+				<br><br>
+
+				La démarche qualité renforce la réflexion sur ce concept devenu incontournable dans la vie des établissements. C’est l’outil, par excellence, de la promotion de la bientraitance.
+				<br><br>
+
+				La sensibilisation  à la culture de la résilience nous pousse à croire en permanence aux possibilités d’évolution de la personne accueillie.
+			</p>
+			<h3>Les missions</h3>
+			<p>L’EMP   Henri Wallon a pour  mission  d’accompagner  de  manière  individuelle,  dans  le respect  de  leur  singularité et  le consentement éclairé de ses représentants légaux, des enfants de 5 à 16 ans, des 2 sexes.
+				<br><br>
+				Cet accompagnement pluridisciplinaire fait appel à des actions éducatives, thérapeutiques, pédagogiques et sociales quotidiennes dont la synergie tend à :
+			</p><br>
+
+			<p>
+				Favoriser le développement et  l’épanouissement des personnes accueillies dans les domaines culturels, cognitifs, affectifs, psychologiques et physiques.<br><br>
+				Favoriser   un   gain   d’autonomie   maximale   dans   le   domaine   de   la   vie quotidienne, familiale, sociale et professionnelle à venir.
+				<br><br>
+				Favoriser la citoyenneté et la participation sociale de la personne accueillie.<br>
+				<br>
+				Les  missions  de  l’EMP  Henri Wallon  se  résument  donc  à  accompagner  la  personne accueillie   vers une meilleure intégration possible à la communauté humaine, familiale et sociale.
+				<br>
+				<br>
+
+				Ces missions ont aussi pour vocation de respecter, d’affirmer et promouvoir les Droits de la personne accueillie.
+
+
+			</p>
+		</article><!-- /Article --></body>
+</div></body></div><!-- /container --><div id='scroll_to_top' class='opacity'><img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut"></div>{% block javascripts %}<script src="{{ asset('js/menu.js') }}"></script>{% endblock %}{% endblock %}

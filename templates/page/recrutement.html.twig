@@ -3,7 +3,7 @@
 {% block title %}presentation
 {% endblock %}
 {% block stylesheets %}
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/presentation.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/recrutement.css') }}"/>
 
 {% endblock %}
 
@@ -25,18 +25,29 @@
 					Recrutement
 				</h1>
 			</div>
-			{% for article in articles %}
-			<h2>{{ article.publications }}
+			<div class='post_recrut'>
+			{% for recrut in recrutements %}
+				<h3>{{ recrut.publications.lbpublication }}</h3>
+				<h1>{{ recrut.lbTitre }}</h1>
+				<p>{{ recrut.lbDescription }}</p>
+				<p>du {{ recrut.dateDebut | date('d/m/y') }}
+					au {{ recrut.dateFin | date('d/m/y') }}
+				</p>
 
-		{% endfor %} 
+
+			{% else %}
+				<tr>
+					<td colspan="8">Nous ne recherchons aucune personne pour le moment.</td>
+				</tr>
+			{% endfor %}
+		</div>
 		</div>
 	</body>
-<!-- /Article -->
-<div id='scroll_to_top' class='opacity'>
-	<img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut">
-</div>
-{% block javascripts %}
-	<script src="{{ asset('js/menu.js') }}"></script>
-{% endblock %}</body>{% endblock %}
-
-
+	<!-- /Article -->
+	<div id='scroll_to_top' class='opacity'>
+		<img src="{{ asset('images/collapse_arrow.svg') }}" alt="Retourner en haut">
+	</div>
+	{% block javascripts %}
+		<script src="{{ asset('js/menu.js') }}"></script>
+	{% endblock %}
+</body>{% endblock %}

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass=TgRecruteRepository::class)
  * @ORM\Table(name="tg_recrute")
  */
 class TgRecrute
@@ -75,6 +75,7 @@ class TgRecrute
     public function __construct()
     {
         $this->tgReponses = new ArrayCollection();
+        $this->datePublication = new \DateTime();
     }
 
     /**
@@ -112,7 +113,7 @@ class TgRecrute
     /**
      * @return string
      */
-    public function getLbTitre(): string
+    public function getLbTitre(): ?string
     {
         return $this->lbTitre;
     }
@@ -128,7 +129,7 @@ class TgRecrute
     /**
      * @return string
      */
-    public function getLbDescription(): string
+    public function getLbDescription(): ?string
     {
         return $this->lbDescription;
     }
@@ -160,7 +161,7 @@ class TgRecrute
     /**
      * @return \DateTime
      */
-    public function getDateDebut(): \DateTime
+    public function getDateDebut(): ?\DateTime
     {
         return $this->dateDebut;
     }
@@ -176,7 +177,7 @@ class TgRecrute
     /**
      * @return \DateTime
      */
-    public function getDateFin(): \DateTime
+    public function getDateFin(): ?\DateTime
     {
         return $this->dateFin;
     }
@@ -203,6 +204,7 @@ class TgRecrute
     public function setPublications($publications): void
     {
         $this->publications = $publications;
+        
     }
 
     /**

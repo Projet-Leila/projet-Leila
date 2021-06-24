@@ -20,6 +20,16 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 class AdminController extends AbstractController
 {
     /**
+     * @var UserRepository
+     */
+    private UserRepository $userRepository;
+
+    public function __construct(UserRepository  $userRepository)
+    {
+        $this->userRepository = $userRepository;
+    }
+
+    /**
      * @Route("/Formulaire_Recrutement", name="adm_recrut")
      */
     public function created(Request $request): Response
@@ -74,8 +84,9 @@ class AdminController extends AbstractController
     /**
      * @Route("/{id}", name="adm_user_show", methods={"GET"})
      */
-    public function show(User $user): Response
+    public function show(Request $request): Response
     {
+        $user = $this->userRepository->find($request->attributes->get('id'));
         return $this->render('Admin/show.html.twig', [
             'user' => $user,
         ]);
