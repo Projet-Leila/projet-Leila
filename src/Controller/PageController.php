@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use App\Repository\TgRecruteRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\TgRecrute;
 class PageController extends AbstractController
@@ -14,6 +15,7 @@ class PageController extends AbstractController
      */
     public function accueil(): Response
     {
+    
         return $this->render('page/accueil.html.twig', [
             'controller_name' => 'PageController',
         ]);
@@ -90,9 +92,15 @@ class PageController extends AbstractController
     }
 
     /**
-     * @Route("/Recrutement", name="recrutement")
+     * @Route("/Recrutement", name="recrutement", methods={"GET"})
      */
-    public function recrutement()
+    public function recrutement(TgRecruteRepository $TgRecruteRepository): Response
+    {
+        return $this->render('page/recrutement.html.twig', [
+            'recrutements' => $TgRecruteRepository->findAll(),
+        ]);
+    }
+    /* public function recrutement()
     {
         $repo = $this->getDoctrine()->getRepository(TgRecrute::class);
 
@@ -102,7 +110,7 @@ class PageController extends AbstractController
             'controller_name' => 'PageController',
             'articles' => $post
         ]);
-    }
+    } */
 
     /**
      * @Route("/Contact", name="contact")
